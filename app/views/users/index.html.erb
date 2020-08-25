@@ -1,2 +1,31 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h1 class="header">-----------------------Welcome to our Users App ----------------------</h1>
+<br>
+<br>
+<style>
+.content{
+  text-align: center;
+  color: purple;
+
+}
+.header {
+  text-align:center;
+  color: white;
+  background-color: purple;
+}
+</style>
+<div class="content">
+<% @users.each do |user| %>
+  <h2><%= user.first_name %></h2>
+  <h4><%= user.last_name %></h4>
+  <h6>Age: <%= user.age %></h6>
+  <h6>Hair Color:<%= user.hair_color %><h6>
+  <hr>
+  
+  <%= link_to 'View Page', user_path(user) %>
+  <%= link_to 'Edit Page', edit_user_path(user) %>
+  <%= link_to 'Delete User', edit_user_path(user) %>
+  <%= link_to 'Create Page', edit_user_path(user) %>
+
+<% end %>
+
+</div>
