@@ -19,12 +19,13 @@
   <h4><%= user.last_name %></h4>
   <h6>Age: <%= user.age %></h6>
   <h6>Hair Color:<%= user.hair_color %><h6>
-  <hr>
   
-  <%= link_to 'View Page', user_path(user) %>
-  <%= link_to 'Edit Page', edit_user_path(user) %>
-  <%= link_to 'Delete User', edit_user_path(user) %>
-  <%= link_to 'Create Page', edit_user_path(user) %>
+
+
+  <%= link_to 'Create User', new_user_path() %>
+  <%= link_to 'Edit User', edit_user_path(user) %>
+  <%= link_to 'Delete User', user, method: :delete %>
+  <hr>
 
 <% end %>
 
